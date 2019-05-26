@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="people"></div>
+    <script>
+
+    //    let output = '';     
+    //    for(var i = 0; i < people.length; i++) {
+    //         output += "<li>" + people[i].name + people[i].age +  "</li>"
+    //    }
+
+
+
+    //    let names =  people.forEach((x) => {
+    //        output =+ '<li>' + x + '</li>';
+           
+    //    } );
+    //    document.getElementById('people').innerHTML = output;
+
+       
+    
+    //    let container = document.getElementById("containter");
+
+
+            var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var response = JSON.parse(xhttp.responseText);
+                var people = response.people;
+                let output = '';     
+                for(var i = 0; i < people.length; i++) {
+                        output += "<li>" + people[i].name  +  "</li>"
+                }
+                document.getElementById('people').innerHTML = output;
+            }
+        };
+        xhttp.open("GET", "people.json", true);
+        xhttp.send();
+       
+
+       
+    </script>
+
+    
+</body>
+</html>
