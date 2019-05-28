@@ -36,7 +36,7 @@
                 var people = response.people;
                 let output = '';     
                 for(var i = 0; i < people.length; i++) {
-                        output += "<li>" + people[i].name  +  "</li>"
+                        output += "<li>" + people[i].name + " - " + people[i].age  +  "</li>"
                 }
                 document.getElementById('people').innerHTML = output;
             }
